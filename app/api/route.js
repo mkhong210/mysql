@@ -1,6 +1,9 @@
 import { queryExecute } from "./db";
 
 export async function GET() {
+	// 잘나오나 테스트
+	// const host = process.env.NEXT_PUBLIC_HOST;
+	// console.log(host)
 	// 불러오기(select)
 	const data = await queryExecute('SELECT * from member');
 

@@ -1,10 +1,15 @@
 var mysql = require('mysql');
 var connection = mysql.createConnection({
-	host: 'svc.sel5.cloudtype.app',
-	user: 'root',
-	password: '1234',
-	database: 'test',
-	port: '30697'
+	host: process.env.NEXT_PUBLIC_HOST,
+	user: process.env.NEXT_PUBLIC_USER,
+	password: process.env.NEXT_PUBLIC_PASSWORD,
+	database: process.env.NEXT_PUBLIC_DATABASE,
+	port: process.env.NEXT_PUBLIC_PORT
+	// host: 'svc.sel5.cloudtype.app',
+	// user: 'root',
+	// password: '1234',
+	// database: 'test',
+	// port: '30697'
 });
 
 // 접속
@@ -24,7 +29,7 @@ export async function queryExecute(str, value) {
 		});
 	})
 	// terminal에 console이 찍힘
-	console.log(data)
+	// console.log(data)
 	return data;
 
 	// 방법 2
